@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "pages/index.css">
+    <link rel="shortcut icon" href="images/faviconka.ru_1_122739.ico" type="image/x-icon">
+    <title>Memory Game</title>
+</head>
+<body class = "body">
+    <header class = "header">
+        <h1 class = "header__title">Welcome to Memory Game 🤓</h1>
+    </header>
+    <main class = "main">
+        <section class = "details">
+            <h2 class = "details__title">Ваш результат</h2>
+            <p class = "details__paragraph">Количество ходов: <span id = "move" class = "details__result"></span></p>
+            <p class = "details__paragraph">Угадано: <span id = "solved" class = "details__result"></span></p>
+            <p class = "details__paragraph">Осталось: <span id = "not-solved" class = "details__result"></span></p>
+        </section>
+        <section class = "start">
+            <button type = "button" class = "start__button"><p class = "start__button-text">Начать игру</p></button>
+        </section>
+        <section class = "main__grid closed"></section>
+    </main>
+    <footer class = "footer">
+        <p class = "footer__title">&copy; Сороко Олеся</p>
+    </footer>
+    <div class = "popup closed">
+        <div class = "popup__container">
+            <h2 class = "popup__title">Отлично!</h2>
+            <p class = "popup__subtitle popup__subtitle_bold">Ваш результат</p>
+            <p class = "popup__subtitle">Количество ходов: <span id = "popup-move" class = "details__result"></span></p>
+            <button type = "button" class = "popup__button start__button"><p class = "start__button-text">Продолжить</p></button>
+            <button class = "popup__close-button" type = "button"></button>
+        </div>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>

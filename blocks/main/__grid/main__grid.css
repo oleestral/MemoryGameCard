@@ -1,0 +1,19 @@
+.main__grid {
+    cursor: pointer;
+    margin-top: 50px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: 100px 15px 100px 15px 100px 15px 100px;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 15px;
+}
+@media all and (min-width: 320px) and (max-width: 499px){
+    .main__grid {
+        -ms-grid-columns: 100px 5px 100px 5px 100px;
+        grid-template-columns: repeat(3, 100px);
+        grid-gap: 5px;
+    }
+}

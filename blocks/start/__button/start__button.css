@@ -1,0 +1,15 @@
+.start__button {
+    cursor: pointer;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffc142;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 280px;
+}

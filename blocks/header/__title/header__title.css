@@ -1,0 +1,11 @@
+.header__title {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 35px
+}
+@media all and (max-width:999px) {
+    .header__title {
+        width: 320px;
+    }
+}
