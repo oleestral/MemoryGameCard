@@ -6,7 +6,8 @@ const popup = document.querySelector('.popup')
 const move = document.querySelector('#move');
 let solved = document.querySelector('#solved');
 let notSolved = document.querySelector('#not-solved');
-const popupMove = document.querySelector('#popup-move')
+const popupMove = document.querySelector('#popup-move');
+const refreshButton = document.querySelector('.start__refresh-button')
 let click = 0;
 // default cards
 const cardArray = [
@@ -59,14 +60,13 @@ const cardArray = [
     img: 'images/hotdog.png'
   }
 ]
-cardArray.sort(() => 0.5 - Math.random())
 const grid = document.querySelector('.main__grid')
 let cardsChosen = []
 let cardsChosenId = []
 let cardsWon = []
   
 //////////////////////////////  ФУНКЦИИ \\\\\\\\\\\\\\\\\\\\\\\\\\
-
+cardArray.sort(() => 0.5 - Math.random())
 // open cards
 function openCards() {
   gridContainer.classList.remove('closed');
@@ -75,7 +75,7 @@ function openCards() {
 //close popup by continue button
 function closePopupByContinueButton() {
   popup.classList.add('closed');
-  window.location.reload()
+  refreshPage();
 }
 
 //open popup
@@ -88,6 +88,15 @@ function clickCounter() {
   move.textContent = click;
   popupMove.textContent = move.textContent;
 }
+// refresh button available 
+function openRefreshButton() {
+  refreshButton.classList.remove('closed')
+}
+// refresh page
+function refreshPage() {
+  window.location.reload();
+}
+
     //create your board
     function createBoard() {
       for (let i = 0; i < cardArray.length; i++) {
@@ -139,8 +148,13 @@ function flipCard() {
 createBoard();
 //////////////////////////////  ВЫЗОВЫ ФУНКЦИИ \\\\\\\\\\\\\\\\\\\\\\\\\\
 // open cards
-startButton.addEventListener('click', openCards);
+startButton.addEventListener('click', () => {
+  openRefreshButton();
+  openCards();
+});
 // close popup by continue button
 continueButton.addEventListener('click', closePopupByContinueButton);
 // click counter
-gridContainer.addEventListener('click', clickCounter)
+gridContainer.addEventListener('click', clickCounter);
+// refresh page
+refreshButton.addEventListener('click', refreshPage);
