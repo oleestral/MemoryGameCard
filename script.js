@@ -1,7 +1,6 @@
 //////////////////////////////  ОБЪЯВЛЕНИЕ ПЕРЕМЕННЫХ \\\\\\\\\\\\\\\\\\\\\\\\\\
 const gridContainer = document.querySelector('.main__grid')
 const startButton = document.querySelector('.start__button')
-const closeButton = document.querySelector('.popup__close-button')
 const continueButton = document.querySelector('.popup__button')
 const popup = document.querySelector('.popup')
 const move = document.querySelector('#move');
@@ -73,14 +72,9 @@ function openCards() {
   gridContainer.classList.remove('closed');
 }
 
-// close popup by close button
-function closePopupByCloseButton() {
-  popup.classList.add('closed');
-}
-
 //close popup by continue button
 function closePopupByContinueButton() {
-  closePopupByCloseButton();
+  popup.classList.add('closed');
   window.location.reload()
 }
 
@@ -146,8 +140,6 @@ createBoard();
 //////////////////////////////  ВЫЗОВЫ ФУНКЦИИ \\\\\\\\\\\\\\\\\\\\\\\\\\
 // open cards
 startButton.addEventListener('click', openCards);
-// close popup by close button
-closeButton.addEventListener('click', closePopupByCloseButton);
 // close popup by continue button
 continueButton.addEventListener('click', closePopupByContinueButton);
 // click counter
